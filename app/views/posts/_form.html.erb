@@ -1,0 +1,12 @@
+<%= form_for(@post) do |f| %>
+
+  <%= render 'shared/error_messages' %>
+
+  <%= f.collection_select(:category_id, Category.all, :id, :name, {prompt: "Choose a Category" }) %><br>
+  <%= f.label :title %><br>
+  <%= f.text_field :title, placeholder: "Title" %><br>
+  <%= f.label :content %><br>
+  <%= f.text_area :content, size: "60x12", placeholder: "Text" %><br>
+  <%= f.submit %>
+
+  <% end %>
